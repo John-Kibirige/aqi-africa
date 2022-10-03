@@ -24,7 +24,20 @@ export const fetchSingleData = createAsyncThunk(
 const pollutionSlice = createSlice({
   name: 'pollution slice',
   initialState,
-  reducers: {},
+  reducers: {
+    activateCountry: (state, action) => {
+      const st = state;
+      st.data = st.data.map((obj) => {
+        if (obj.country === action.payload.country) {
+          return {
+            ...obj,
+            active: true,
+          };
+        }
+        return obj;
+      });
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchSingleData.pending, (state, action) => {
@@ -51,3 +64,4 @@ const pollutionSlice = createSlice({
 });
 
 export default pollutionSlice;
+export const { activateCountry } = pollutionSlice.actions;
