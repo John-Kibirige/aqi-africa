@@ -25,11 +25,11 @@ const Home = () => {
     <div className="card-wrapper grid grid-cols-2">
       {status === 'succeeded' &&
         data.map((value, index) => {
-          const { country, imgUrl } = value;
+          const { country, imgUrl, id } = value;
           const { list } = value.fetched;
           if (index === 0) {
             return (
-              <Link to={'details'} className="col-span-2">
+              <Link to={`details/${id}`} className="col-span-2">
                 <Common
                   imageUrl={imgUrl}
                   country={country}
@@ -40,7 +40,7 @@ const Home = () => {
           } else {
             return (
               <Link
-                to={'details'}
+                to={`details/${id}`}
                 className={`${sequencyForAddingColors.includes(index) ? 'bg-pink-600' : 'bg-pink-700'}`}>
                 <HomeCard
                   imageUrl={imgUrl}

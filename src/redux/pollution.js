@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
 import data from '../data/data';
 
@@ -49,6 +49,7 @@ const pollutionSlice = createSlice({
         st.data = st.data.map((obj, index) => {
           return {
             ...obj,
+            id: nanoid(),
             fetched: action.payload[index].data,
           };
         });

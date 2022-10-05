@@ -4,7 +4,7 @@ const countryCoordinates = [
     capital: 'Algiers',
     latitude: 36.753769,
     longitude: 3.058756,
-    imgUrl: 'https://simplemaps.com/static/svg/dz/dz.svg',
+    imageUrl: 'https://simplemaps.com/static/svg/dz/dz.svg',
   },
   {
     country: 'Angola',
@@ -53,8 +53,7 @@ const countryCoordinates = [
     capital: 'Praia',
     latitude: 14.9177,
     longitude: -23.5092,
-    imgUrl:
-      'https://www.pngfind.com/pngs/m/343-3439420_png-file-svg-cape-verde-map-svg-transparent.png',
+    imgUrl: 'https://vemaps.com/uploads/img/cv-04.png',
   },
   {
     country: 'Central African Republic',
@@ -336,7 +335,7 @@ const countryCoordinates = [
     capital: 'Kampala',
     latitude: 0.31569,
     longitude: 32.57811,
-    imgUrl: 'https://vemaps.com/uploads/img/large/ug-04.jpg',
+    imgUrl: 'https://simplemaps.com/static/svg/ug/ug.svg',
   },
   {
     country: 'Zambia',
