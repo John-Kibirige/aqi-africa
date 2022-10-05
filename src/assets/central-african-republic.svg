@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created for MapSVG plugin: http://mapsvg.com -->
 <svg
-   xmlns:mapsvg="http://mapsvg.com"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   mapsvg:geoViewBox="14.421468 11.007742 27.464488 2.219468" 
+
    width="1174.9122"
    height="792.64313">
    <path
