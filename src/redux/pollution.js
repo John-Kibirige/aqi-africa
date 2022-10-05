@@ -39,7 +39,7 @@ const pollutionSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchData.pending, (state, action) => {
+      .addCase(fetchData.pending, (state) => {
         const st = state;
         st.status = 'pending';
       })
@@ -53,15 +53,12 @@ const pollutionSlice = createSlice({
           };
         });
 
-        console.log('the un sorted data ', st.data);
-
+        // sort the data in state
         st.data = st.data.sort((a, b) => {
           let arr1 = a.fetched.list;
           let arr2 = b.fetched.list;
           return arr2[0].main.aqi - arr1[0].main.aqi;
         });
-
-        console.log('the sorted data now', st.data);
       });
   },
 });
