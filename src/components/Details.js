@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import DetailsCard from './DetailsCard';
+import Common from './Common';
 
 const Details = () => {
   const { data } = useSelector((state) => state.pollutionData);
@@ -17,7 +18,8 @@ const Details = () => {
   const { co, no, no2, so2, o3, nh3, pm2_5, pm10 } = list[0].components;
 
   return (
-    <div className="details-container p-4 bg-slate-200">
+    <section className="">
+      <Common isDetail={true} />
       {
         <DetailsCard
           imageUrl={imgUrl}
@@ -36,7 +38,7 @@ const Details = () => {
           nh3={nh3}
         />
       }
-    </div>
+    </section>
   );
 };
 
