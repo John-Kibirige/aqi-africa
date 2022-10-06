@@ -5,6 +5,7 @@ import data from '../data/data';
 const initialState = {
   data,
   status: 'idle',
+  recentSearch: '',
 };
 
 export const fetchData = createAsyncThunk(
@@ -36,6 +37,10 @@ const pollutionSlice = createSlice({
         return obj;
       });
     },
+    updateRecentSearch: (state, action) => {
+      const st = state;
+      st.recentSearch = action.payload;
+    },
   },
   extraReducers(builder) {
     builder
@@ -65,4 +70,4 @@ const pollutionSlice = createSlice({
 });
 
 export default pollutionSlice;
-export const { activateCountry } = pollutionSlice.actions;
+export const { updateRecentSearch } = pollutionSlice.actions;
