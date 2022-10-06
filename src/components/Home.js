@@ -39,12 +39,12 @@ const Home = () => {
   ];
 
   return (
-    <section className="home-section p-4">
+    <section className="home-section p-4 sm:p-6">
       <Common />
       <Africa />
       <Search handleOnChange={handleOnChange} nameState={searchState} />
 
-      <div className="card-wrapper grid grid-cols-2 gap-3 pt-4">
+      <div className="card-wrapper grid grid-cols-2 gap-3 sm:gap-6 pt-4">
         {searchState
           ? status === 'succeeded' &&
             data

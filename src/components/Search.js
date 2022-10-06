@@ -5,9 +5,9 @@ const Search = ({ nameState, handleOnChange }) => {
     e.preventDefault();
   };
   return (
-    <form className="search-form flex justify-center" onSubmit={handleSubmit}>
+    <form className="search-form flex sm:mt-7 sm:mb-4" onSubmit={handleSubmit}>
       <input
-        className="bg-gray-100 appearance-none border-2 border-pink-400 w-10/12 py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-500"
+        className="bg-gray-100 appearance-none border-2 border-pink-400 w-10/12 py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-500 sm:p-2"
         type="text"
         placeholder="Search by country"
         value={nameState}

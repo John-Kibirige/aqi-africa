@@ -18,60 +18,66 @@ const DetailsCard = (props) => {
     nh3,
   } = props;
   return (
-    <div className="details-card h-screen details-container p-4 bg-slate-200">
+    <div className="details-card min-h-screen h-full details-container p-4 bg-slate-200 sm:px-7">
       <div
         className={`img-text relative ${
           country === 'Gambia' || country === 'Central African Republic'
             ? 'flex '
             : ''
-        }`}>
+        } sm:flex sm:gap-4`}>
         <img
           src={imageUrl}
           alt={`${country}`}
-          className="card-image w-[45%] "
+          className="card-image w-[45%] sm:h-[36vh] sm:object-contain"
         />
         <div
-          className={`details-text  shadow-xl p-3 bg-pink-100 ml-3 w-[50%]  top-3 right-2 ${
+          className={`details-text  shadow-xl p-3 bg-white ml-3 w-[50%]  top-3 right-2 ${
             country !== 'Gambia' && country !== 'Central African Republic'
               ? 'absolute'
               : ''
-          }`}>
-          <h1 className="card-title uppercase text-pink-500 font-bold text-center">
+          } sm:static`}>
+          <h1 className="card-title uppercase text-pink-500 font-bold text-center sm:text-2xl sm:mt-2">
             {country}
           </h1>
-          <h3 className="card-capital text-center underline">{capital}</h3>
-          <p className="lon-lat">Longitude: {longitude}</p>
-          <p className="lon-lat">Latitude: {latitude}</p>
+          <h3 className="card-capital text-center underline sm:text-xl sm:no-underline sm:font-bold sm:my-2">
+            {capital}
+          </h3>
+          <p className="lon-lat sm:text-xl sm:text-center sm:mb-2">
+            Longitude: {longitude}
+          </p>
+          <p className="lon-lat sm:text-xl sm:text-center sm:mb-2">
+            Latitude: {latitude}
+          </p>
         </div>
       </div>
-      <hr className="separator my-3" />
 
       <button
         type="button"
-        className="index bg-pink-500 text-gray-100 uppercase px-3 py-1 rounded ml-auto hover:bg-pink-400 block ">
+        className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-4 mr-3 sm:mt-7 sm:mr-7">
         {' '}
         index = {aqIndex}
       </button>
 
-      <h2 className="break-down font-bold text-2xl uppercase text-center my-4">
+      <h2 className="break-down font-bold text-2xl uppercase text-center my-4 sm:text-3xl">
         Air Quality Index breakdown
       </h2>
-      <table class="table-fixed">
+
+      <table class="table-fixed sm:w-full mb-6">
         <thead>
-          <tr className="bg-pink-600 text-white odd:border border border-solid ">
-            <th className="header w-1/3">Symbol</th>
-            <th className="header w-1/3">Component name</th>
-            <th className="header w-1/3">
+          <tr className="bg-pink-600 text-white odd:border border border-solid">
+            <th className="header w-1/3 sm:p-3 sm:text-lg">Symbol</th>
+            <th className="header w-1/3 sm:p-3 sm:text-lg">Component name</th>
+            <th className="header w-1/3 sm:p-3 sm:text-lg">
               Concentration (μg/m<sup>3</sup>)
             </th>
           </tr>
         </thead>
         <tbody className="text-center">
           <tr>
-            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               CO
             </td>
-            <td className="hover:bg-pink-200 transition-all">
+            <td className="hover:bg-pink-200 transition-all border border-solid border-pink-400">
               Carbon Monoxide
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
@@ -79,7 +85,7 @@ const DetailsCard = (props) => {
             </td>
           </tr>
           <tr>
-            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               NO
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
@@ -90,7 +96,7 @@ const DetailsCard = (props) => {
             </td>
           </tr>
           <tr>
-            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               NO<sub>2</sub>
             </td>
             <td>Nitrogen dioxide</td>
@@ -99,7 +105,7 @@ const DetailsCard = (props) => {
             </td>
           </tr>
           <tr>
-            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               O<sub>3</sub>
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
@@ -109,17 +115,9 @@ const DetailsCard = (props) => {
               {o3}
             </td>
           </tr>
+
           <tr>
-            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
-              O<sub>3</sub>
-            </td>
-            <td>Ozone</td>
-            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
-              {o3}
-            </td>
-          </tr>
-          <tr>
-            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               SO<sub>2</sub>
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
@@ -131,7 +129,7 @@ const DetailsCard = (props) => {
             </td>
           </tr>
           <tr>
-            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               PM<sub>2_5</sub>
             </td>
             <td className="hover:bg-pink-200 transition-all">
@@ -142,7 +140,7 @@ const DetailsCard = (props) => {
             </td>
           </tr>
           <tr>
-            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               PM<sub>10</sub>
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
@@ -154,7 +152,7 @@ const DetailsCard = (props) => {
             </td>
           </tr>
           <tr>
-            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
               NH<sub>3</sub>
             </td>
             <td className="border border-solid border-b border-pink-400 hover:bg-pink-200 transition-all">
