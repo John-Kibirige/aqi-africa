@@ -20,7 +20,11 @@ const DetailsCard = (props) => {
   return (
     <div className="details-card h-screen">
       <div
-        className={`img-text relative ${country === 'Gambia' ? 'flex ' : ''}`}>
+        className={`img-text relative ${
+          country === 'Gambia' || country === 'Central African Republic'
+            ? 'flex '
+            : ''
+        }`}>
         <img
           src={imageUrl}
           alt={`${country}`}
@@ -28,7 +32,9 @@ const DetailsCard = (props) => {
         />
         <div
           className={`details-text  shadow-xl p-3 bg-pink-100 ml-3 w-[50%]  top-3 right-2 ${
-            country !== 'Gambia' ? 'absolute' : ''
+            country !== 'Gambia' && country !== 'Central African Republic'
+              ? 'absolute'
+              : ''
           }`}>
           <h1 className="card-title uppercase text-pink-500 font-bold text-center">
             {country}
