@@ -8,7 +8,6 @@ const DetailsCard = (props) => {
     latitude,
     longitude,
     capital,
-    
     co,
     no,
     no2,
@@ -19,86 +18,145 @@ const DetailsCard = (props) => {
     nh3,
   } = props;
   return (
-    <div className="details-card">
-      <img src={imageUrl} alt="" className="card-image" />
-      <div className="details-text">
-        <h1 className="card-title">{country}</h1>
-        <h3 className="card-capital">{capital}</h3>
-        <p className="aqi-value">{aqIndex}</p>
-        <p className="lon-lat">
-          Longitude: {longitude}, Latitude: {latitude}
-        </p>
+    <div className="details-card h-screen">
+      <div
+        className={`img-text relative ${country === 'Gambia' ? 'flex ' : ''}`}>
+        <img
+          src={imageUrl}
+          alt={`${country}`}
+          className="card-image w-[45%] "
+        />
+        <div
+          className={`details-text  shadow-xl p-3 bg-pink-100 ml-3 w-[50%]  top-3 right-2 ${
+            country !== 'Gambia' ? 'absolute' : ''
+          }`}>
+          <h1 className="card-title uppercase text-pink-500 font-bold text-center">
+            {country}
+          </h1>
+          <h3 className="card-capital text-center underline">{capital}</h3>
+          <p className="lon-lat">Longitude: {longitude}</p>
+          <p className="lon-lat">Latitude: {latitude}</p>
+        </div>
       </div>
+      <hr className="separator my-3" />
 
+      <button
+        type="button"
+        className="index bg-pink-500 text-gray-100 uppercase px-3 py-1 rounded ml-auto hover:bg-pink-400 block ">
+        {' '}
+        index = {aqIndex}
+      </button>
+
+      <h2 className="break-down font-bold text-2xl uppercase text-center my-4">
+        Air Quality Index breakdown
+      </h2>
       <table class="table-fixed">
         <thead>
-          <tr>
-            <th>Symbol</th>
-            <th>Component name</th>
-            <th>
+          <tr className="bg-pink-600 text-white odd:border border border-solid ">
+            <th className="header w-1/3">Symbol</th>
+            <th className="header w-1/3">Component name</th>
+            <th className="header w-1/3">
               Concentration (μg/m<sup>3</sup>)
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-center">
           <tr>
-            <td>CO</td>
-            <td>Carbon Monoxide</td>
-            <td>{co}</td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              CO
+            </td>
+            <td className="hover:bg-pink-200 transition-all">
+              Carbon Monoxide
+            </td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              {co}
+            </td>
           </tr>
           <tr>
-            <td>NO</td>
-            <td>Nitrogen monoxide</td>
-            <td>{no}</td>
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
+              NO
+            </td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              Nitrogen monoxide
+            </td>
+            <td className="border border-solid border-r border-pink-400 hover:bg-pink-200 transition-all">
+              {no}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               NO<sub>2</sub>
             </td>
             <td>Nitrogen dioxide</td>
-            <td>{no2}</td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              {no2}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
+              O<sub>3</sub>
+            </td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              Ozone
+            </td>
+            <td className="border border-solid border-r border-pink-400 hover:bg-pink-200 transition-all">
+              {o3}
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               O<sub>3</sub>
             </td>
             <td>Ozone</td>
-            <td>{o3}</td>
-          </tr>
-          <tr>
-            <td>
-              O<sub>3</sub>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              {o3}
             </td>
-            <td>Ozone</td>
-            <td>{o3}</td>
           </tr>
           <tr>
-            <td>
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
               SO<sub>2</sub>
             </td>
-            <td>Sulphur dioxide</td>
-            <td>{so2}</td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              {' '}
+              Sulphur dioxide
+            </td>
+            <td className="border border-solid border-r border-pink-400 hover:bg-pink-200 transition-all">
+              {so2}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               PM<sub>2_5</sub>
             </td>
-            <td>Small size particulate</td>
-            <td>{pm25}</td>
+            <td className="hover:bg-pink-200 transition-all">
+              Small size particulate
+            </td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              {pm25}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all">
               PM<sub>10</sub>
             </td>
-            <td>Bigger size Particulates </td>
-            <td>{pm10}</td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              {' '}
+              Bigger size Particulates{' '}
+            </td>
+            <td className="border border-solid border-r border-pink-400 hover:bg-pink-200 transition-all">
+              {pm10}
+            </td>
           </tr>
           <tr>
-            <td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               NH<sub>3</sub>
             </td>
-            <td>Ammonia</td>
-            <td>{nh3}</td>
+            <td className="border border-solid border-b border-pink-400 hover:bg-pink-200 transition-all">
+              Ammonia
+            </td>
+            <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
+              {nh3}
+            </td>
           </tr>
         </tbody>
       </table>
