@@ -8,22 +8,19 @@ const Details = () => {
   const path = useLocation();
   const [, , countryId] = path.pathname.split('/');
 
-  console.log('the country id is ', countryId);
-
   const filtered = data.filter((obj) => obj.id === countryId);
-  const { imageUrl, country, latitude, longitude, capital, fetched } =
+  const { imgUrl, country, latitude, longitude, capital, fetched } =
     filtered[0];
 
-  console.log('the filteted array is ', filtered);
   const list = fetched.list;
-  const { aqi } = list[0].main.aqi;
+  const { aqi } = list[0].main;
   const { co, no, no2, so2, o3, nh3, pm2_5, pm10 } = list[0].components;
 
   return (
-    <div>
+    <div className="details-container p-4 bg-slate-200">
       {
         <DetailsCard
-          imageUrl={imageUrl}
+          imageUrl={imgUrl}
           country={country}
           aqIndex={aqi}
           latitude={latitude}
