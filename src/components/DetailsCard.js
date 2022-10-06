@@ -18,7 +18,7 @@ const DetailsCard = (props) => {
     nh3,
   } = props;
   return (
-    <div className="details-card h-screen">
+    <div className="details-card h-screen details-container p-4 bg-slate-200">
       <div
         className={`img-text relative ${
           country === 'Gambia' || country === 'Central African Republic'
