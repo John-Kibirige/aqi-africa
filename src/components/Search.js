@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import searchIcon from '../assets/search-icon.svg';
 
 const Search = ({nameState, handleOnChange}) => {
@@ -7,7 +6,7 @@ const Search = ({nameState, handleOnChange}) => {
       <input
         className="bg-gray-100 appearance-none border-2 border-pink-400 w-3/4 py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-500"
         type="text"
-        placeholder="Search by country or city"
+        placeholder="Search by country"
         value={nameState}
         name={nameState}
         onChange={handleOnChange}></input>
