@@ -22,34 +22,27 @@ const Home = () => {
   ];
 
   return (
-    <div className="card-wrapper grid grid-cols-2">
+    <div className="card-wrapper grid grid-cols-2 gap-3 p-4">
       {status === 'succeeded' &&
         data.map((value, index) => {
           const { country, imgUrl, id } = value;
           const { list } = value.fetched;
-          if (index === 0) {
-            return (
-              <Link to={`details/${id}`} className="col-span-2">
-                <Common
-                  imageUrl={imgUrl}
-                  country={country}
-                  aqIndex={list[0].main.aqi}
-                />
-              </Link>
-            );
-          } else {
-            return (
-              <Link
-                to={`details/${id}`}
-                className={`${sequencyForAddingColors.includes(index) ? 'bg-pink-600' : 'bg-pink-700'}`}>
-                <HomeCard
-                  imageUrl={imgUrl}
-                  country={country}
-                  aqIndex={list[0].main.aqi}
-                />
-              </Link>
-            );
-          }
+          return (
+            <Link
+              to={`details/${id}`}
+              className={`${
+                sequencyForAddingColors.includes(index + 1)
+                  ? 'bg-slate-300'
+                  : 'bg-slate-200'
+              } shadow-lg rounded p-2`}>
+              <HomeCard
+                imageUrl={imgUrl}
+                country={country}
+                aqIndex={list[0].main.aqi}
+                key={id}
+              />
+            </Link>
+          );
         })}
     </div>
   );
