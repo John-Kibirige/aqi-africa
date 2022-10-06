@@ -6,20 +6,15 @@ import Search from './Search';
 import HomeCard from './HomeCard';
 import stringComparator from '../script';
 import { updateRecentSearch } from '../redux/pollution';
+import Africa from './Africa';
+import Common from './Common';
 
 const Home = () => {
   const { data, status, recentSearch } = useSelector(
     (state) => state.pollutionData
   );
+  console.log('the data at this point ', data);
   const dispatch = useDispatch();
-  console.log(
-    'the data at this stage is ',
-    status,
-    data,
-    ' the recent search ',
-    recentSearch
-  );
-
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchData());
@@ -45,11 +40,14 @@ const Home = () => {
 
   return (
     <section className="home-section p-4">
+      <Common />
+      <Africa />
       <Search handleOnChange={handleOnChange} nameState={searchState} />
 
       <div className="card-wrapper grid grid-cols-2 gap-3 pt-4">
-        {status === 'succeeded' && searchState
-          ? data
+        {searchState
+          ? status === 'succeeded' &&
+            data
               .filter((obj) => {
                 const { country } = obj;
                 if (searchState) {
@@ -77,7 +75,8 @@ const Home = () => {
                   </Link>
                 );
               })
-          : data.map((value, index) => {
+          : status === 'succeeded' &&
+            data.map((value, index) => {
               const { country, imgUrl, id } = value;
               const { list } = value.fetched;
               return (
