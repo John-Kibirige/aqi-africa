@@ -17,7 +17,7 @@ const Details = () => {
   const { list } = fetched;
   const { aqi } = list[0].main;
   const {
-    co, no, no2, so2, o3, nh3, pm2_5, pm10,
+    co, no, no2, so2, o3, nh3, pm2_5: pm25, pm10,
   } = list[0].components;
 
   return (
@@ -35,7 +35,7 @@ const Details = () => {
         no2={no2}
         o3={o3}
         so2={so2}
-        pm25={pm2_5}
+        pm25={pm25}
         pm10={pm10}
         nh3={nh3}
       />
