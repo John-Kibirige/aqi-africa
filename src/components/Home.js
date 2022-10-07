@@ -39,12 +39,12 @@ const Home = () => {
   ];
 
   return (
-    <section className="home-section p-4 sm:p-6">
+    <section className="home-section">
       <Common />
       <Africa />
       <Search handleOnChange={handleOnChange} nameState={searchState} />
 
-      <div className="card-wrapper grid grid-cols-2 gap-3 sm:gap-6 pt-4">
+      <div className="card-wrapper grid grid-cols-2 gap-4 sm:gap-6 pt-4 md:grid-cols-3 lg:grid-cols-4  p-4 sm:p-6">
         {searchState
           ? status === 'succeeded' &&
             data
@@ -64,8 +64,8 @@ const Home = () => {
                     className={`${
                       sequencyForAddingColors.includes(index + 1)
                         ? 'bg-slate-300'
-                        : 'bg-slate-200'
-                    } shadow-lg rounded p-2`}>
+                        : 'bg-slate-200 md:bg-slate-300'
+                    } shadow-lg rounded p-2 sm:hover:scale-[1.03]`}>
                     <HomeCard
                       imageUrl={imgUrl}
                       country={country}
@@ -85,8 +85,8 @@ const Home = () => {
                   className={`${
                     sequencyForAddingColors.includes(index + 1)
                       ? 'bg-slate-300'
-                      : 'bg-slate-200'
-                  } shadow-lg rounded p-2`}>
+                      : 'bg-slate-200 md:bg-slate-300'
+                  } shadow-lg rounded p-2 hover:scale-[1.02] sm:hover:scale-[1.03] transition-all`}>
                   <HomeCard
                     imageUrl={imgUrl}
                     country={country}

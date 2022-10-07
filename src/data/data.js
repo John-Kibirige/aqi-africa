@@ -4,7 +4,7 @@ const countryCoordinates = [
     capital: 'Algiers',
     latitude: 36.753769,
     longitude: 3.058756,
-    imageUrl: 'https://simplemaps.com/static/svg/dz/dz.svg',
+    imgUrl: 'https://simplemaps.com/static/svg/dz/dz.svg',
   },
   {
     country: 'Angola',

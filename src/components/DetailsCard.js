@@ -18,24 +18,15 @@ const DetailsCard = (props) => {
     nh3,
   } = props;
   return (
-    <div className="details-card min-h-screen h-full details-container p-4 bg-slate-200 sm:px-7">
-      <div
-        className={`img-text relative ${
-          country === 'Gambia' || country === 'Central African Republic'
-            ? 'flex '
-            : ''
-        } sm:flex sm:gap-4`}>
+    <div className="details-card min-h-screen h-full details-container p-4 bg-slate-200 sm:px-7 md:pt-8">
+      <div className={`img-text relative flex sm:flex sm:gap-4`}>
         <img
           src={imageUrl}
           alt={`${country}`}
-          className="card-image w-[45%] sm:h-[36vh] sm:object-contain"
+          className="card-image h-[28vh] object-contain w-[45%] sm:h-[36vh] sm:object-contain md:w-2/5"
         />
         <div
-          className={`details-text  shadow-xl p-3 bg-white ml-3 w-[50%]  top-3 right-2 ${
-            country !== 'Gambia' && country !== 'Central African Republic'
-              ? 'absolute'
-              : ''
-          } sm:static`}>
+          className={`details-text  shadow-xl p-3 bg-white ml-3 w-[50%]  top-3 right-2 $sm:static md:w-3/12`}>
           <h1 className="card-title uppercase text-pink-500 font-bold text-center sm:text-2xl sm:mt-2">
             {country}
           </h1>
@@ -49,11 +40,54 @@ const DetailsCard = (props) => {
             Latitude: {latitude}
           </p>
         </div>
+
+        <div className="rubric-table ml-auto mr-14 hidden md:block mt-10">
+          <table className="table-fixed">
+            <thead>
+              <tr>
+                <th className="p-1">Rubric</th>
+                <th className="p-1">Index</th>
+              </tr>
+            </thead>{' '}
+            <tbody>
+              <tr>
+                <th className="p-1 font-normal border-b border-pink-400 border-r">
+                  Good
+                </th>
+                <th className="p-1 font-normal border-b border-pink-400 ">1</th>
+              </tr>
+              <tr>
+                <th className="p-1 font-normal border-b border-pink-400 border-r">
+                  Fair
+                </th>
+                <th className="p-1 font-normal border-b border-pink-400 ">2</th>
+              </tr>
+              <tr>
+                <th className="p-1 font-normal border-b border-pink-400 border-r">
+                  Moderate
+                </th>
+                <th className="p-1 font-normal border-b border-pink-400 ">3</th>
+              </tr>
+              <tr>
+                <th className="p-1 font-normal border-b border-pink-400 border-r">
+                  Poor
+                </th>
+                <th className="p-1 font-normal border-b border-pink-400 ">4</th>
+              </tr>
+              <tr>
+                <th className="p-1 font-normal  border-pink-400 border-r">
+                  Very Poor
+                </th>
+                <th className="p-1 font-normal ">5</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <button
         type="button"
-        className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-4 mr-3 sm:mt-7 sm:mr-7">
+        className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-[18px] mr-3 sm:mt-7 sm:mr-7">
         {' '}
         index = {aqIndex}
       </button>
@@ -133,7 +167,7 @@ const DetailsCard = (props) => {
               PM<sub>2_5</sub>
             </td>
             <td className="hover:bg-pink-200 transition-all">
-              Small size particulate
+              Small size particulates
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               {pm25}
