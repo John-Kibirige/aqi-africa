@@ -3,7 +3,7 @@ import rightArrow from '../assets/right-arrow.svg';
 
 const HomeCard = (props) => {
   const { imageUrl, country, aqIndex } = props;
-  return (
+  return country ? (
     <div className="home-card rounded flex-col flex justify-between">
       <img
         src={rightArrow}
@@ -29,6 +29,8 @@ const HomeCard = (props) => {
         </p>
       </div>
     </div>
+  ) : (
+    'none'
   );
 };
 
