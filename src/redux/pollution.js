@@ -19,7 +19,7 @@ export const fetchData = createAsyncThunk(
     const promises = endpoints.map((point) => axios.get(point));
 
     return axios.all(promises);
-  }
+  },
 );
 const pollutionSlice = createSlice({
   name: 'pollution slice',
@@ -51,18 +51,16 @@ const pollutionSlice = createSlice({
       .addCase(fetchData.fulfilled, (state, action) => {
         const st = state;
         st.status = 'succeeded';
-        st.data = st.data.map((obj, index) => {
-          return {
-            ...obj,
-            id: nanoid(),
-            fetched: action.payload[index].data,
-          };
-        });
+        st.data = st.data.map((obj, index) => ({
+          ...obj,
+          id: nanoid(),
+          fetched: action.payload[index].data,
+        }));
 
         // sort the data in state
         st.data = st.data.sort((a, b) => {
-          let arr1 = a.fetched.list;
-          let arr2 = b.fetched.list;
+          const arr1 = a.fetched.list;
+          const arr2 = b.fetched.list;
           return arr2[0].main.aqi - arr1[0].main.aqi;
         });
       });
