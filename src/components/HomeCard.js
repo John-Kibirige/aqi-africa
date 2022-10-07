@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import rightArrow from '../assets/right-arrow.svg';
 
 const HomeCard = (props) => {
-  const { imageUrl, country, aqIndex } = props;
-  return country ? (
+  const { imageUrl, country = 'No Country found!!', aqIndex } = props;
+  return (
     <div className="home-card rounded flex-col flex justify-between">
       <img
         src={rightArrow}
@@ -29,9 +30,13 @@ const HomeCard = (props) => {
         </p>
       </div>
     </div>
-  ) : (
-    'none'
   );
+};
+
+HomeCard.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  aqIndex: PropTypes.number.isRequired,
 };
 
 export default HomeCard;
