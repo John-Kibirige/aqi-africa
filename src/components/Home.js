@@ -13,7 +13,7 @@ const Home = () => {
   const { data, status, recentSearch } = useSelector(
     (state) => state.pollutionData,
   );
-  console.log('the data at this point ', data);
+
   const dispatch = useDispatch();
   useEffect(() => {
     if (status === 'idle') {
