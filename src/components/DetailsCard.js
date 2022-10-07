@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const DetailsCard = (props) => {
   const {
@@ -19,14 +20,13 @@ const DetailsCard = (props) => {
   } = props;
   return (
     <div className="details-card min-h-screen h-full details-container p-4 bg-slate-200 sm:px-7 md:pt-8">
-      <div className={`img-text relative flex sm:flex sm:gap-4`}>
+      <div className="img-text relative flex sm:flex sm:gap-4">
         <img
           src={imageUrl}
           alt={`${country}`}
           className="card-image h-[28vh] object-contain w-[45%] sm:h-[36vh] sm:object-contain md:w-2/5"
         />
-        <div
-          className={`details-text  shadow-xl p-3 bg-white ml-3 w-[50%]  top-3 right-2 $sm:static md:w-3/12`}>
+        <div className="details-text  shadow-xl p-3 bg-white ml-3 w-[50%]  top-3 right-2 $sm:static md:w-3/12">
           <h1 className="card-title uppercase text-pink-500 font-bold text-center sm:text-2xl sm:mt-2">
             {country}
           </h1>
@@ -34,10 +34,14 @@ const DetailsCard = (props) => {
             {capital}
           </h3>
           <p className="lon-lat sm:text-xl sm:text-center sm:mb-2">
-            Longitude: {longitude}
+            Longitude:
+            {' '}
+            {longitude}
           </p>
           <p className="lon-lat sm:text-xl sm:text-center sm:mb-2">
-            Latitude: {latitude}
+            Latitude:
+            {' '}
+            {latitude}
           </p>
         </div>
 
@@ -48,7 +52,8 @@ const DetailsCard = (props) => {
                 <th className="p-1">Rubric</th>
                 <th className="p-1">Index</th>
               </tr>
-            </thead>{' '}
+            </thead>
+            {' '}
             <tbody>
               <tr>
                 <th className="p-1 font-normal border-b border-pink-400 border-r">
@@ -87,22 +92,27 @@ const DetailsCard = (props) => {
 
       <button
         type="button"
-        className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-[18px] mr-3 sm:mt-7 sm:mr-7">
+        className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-[18px] mr-3 sm:mt-7 sm:mr-7"
+      >
         {' '}
-        index = {aqIndex}
+        index =
+        {' '}
+        {aqIndex}
       </button>
 
       <h2 className="break-down font-bold text-2xl uppercase text-center my-4 sm:text-3xl">
         Air Quality Index breakdown
       </h2>
 
-      <table class="table-fixed sm:w-full mb-6">
+      <table className="table-fixed sm:w-full mb-6">
         <thead>
           <tr className="bg-pink-600 text-white odd:border border border-solid">
             <th className="header w-1/3 sm:p-3 sm:text-lg">Symbol</th>
             <th className="header w-1/3 sm:p-3 sm:text-lg">Component name</th>
             <th className="header w-1/3 sm:p-3 sm:text-lg">
-              Concentration (μg/m<sup>3</sup>)
+              Concentration (μg/m
+              <sup>3</sup>
+              )
             </th>
           </tr>
         </thead>
@@ -131,7 +141,8 @@ const DetailsCard = (props) => {
           </tr>
           <tr>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
-              NO<sub>2</sub>
+              NO
+              <sub>2</sub>
             </td>
             <td>Nitrogen dioxide</td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
@@ -140,7 +151,8 @@ const DetailsCard = (props) => {
           </tr>
           <tr>
             <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
-              O<sub>3</sub>
+              O
+              <sub>3</sub>
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               Ozone
@@ -152,7 +164,8 @@ const DetailsCard = (props) => {
 
           <tr>
             <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
-              SO<sub>2</sub>
+              SO
+              <sub>2</sub>
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               {' '}
@@ -164,7 +177,8 @@ const DetailsCard = (props) => {
           </tr>
           <tr>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
-              PM<sub>2_5</sub>
+              PM
+              <sub>2_5</sub>
             </td>
             <td className="hover:bg-pink-200 transition-all">
               Small size particulates
@@ -175,11 +189,13 @@ const DetailsCard = (props) => {
           </tr>
           <tr>
             <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
-              PM<sub>10</sub>
+              PM
+              <sub>10</sub>
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               {' '}
-              Bigger size Particulates{' '}
+              Bigger size Particulates
+              {' '}
             </td>
             <td className="border border-solid border-r border-pink-400 hover:bg-pink-200 transition-all">
               {pm10}
@@ -187,7 +203,8 @@ const DetailsCard = (props) => {
           </tr>
           <tr>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
-              NH<sub>3</sub>
+              NH
+              <sub>3</sub>
             </td>
             <td className="border border-solid border-b border-pink-400 hover:bg-pink-200 transition-all">
               Ammonia
@@ -200,6 +217,23 @@ const DetailsCard = (props) => {
       </table>
     </div>
   );
+};
+
+DetailsCard.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  aqIndex: PropTypes.string.isRequired,
+  latitude: PropTypes.string.isRequired,
+  longitude: PropTypes.string.isRequired,
+  capital: PropTypes.string.isRequired,
+  co: PropTypes.string.isRequired,
+  no: PropTypes.string.isRequired,
+  no2: PropTypes.string.isRequired,
+  o3: PropTypes.string.isRequired,
+  so2: PropTypes.string.isRequired,
+  pm25: PropTypes.string.isRequired,
+  pm10: PropTypes.string.isRequired,
+  nh3: PropTypes.string.isRequired,
 };
 
 export default DetailsCard;
