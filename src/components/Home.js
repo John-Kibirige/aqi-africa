@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from '../redux/pollution';
+import { fetchData, updateRecentSearch } from '../redux/pollution';
 import Search from './Search';
 import HomeCard from './HomeCard';
 import stringComparator from '../script';
-import { updateRecentSearch } from '../redux/pollution';
+
 import Africa from './Africa';
 import Common from './Common';
 
 const Home = () => {
   const { data, status, recentSearch } = useSelector(
-    (state) => state.pollutionData
+    (state) => state.pollutionData,
   );
   console.log('the data at this point ', data);
   const dispatch = useDispatch();
@@ -46,8 +46,8 @@ const Home = () => {
 
       <div className="card-wrapper grid grid-cols-2 gap-4 sm:gap-6 pt-4 md:grid-cols-3 lg:grid-cols-4  p-4 sm:p-6">
         {searchState
-          ? status === 'succeeded' &&
-            data
+          ? status === 'succeeded'
+            && data
               .filter((obj) => {
                 const { country } = obj;
                 if (searchState) {
@@ -60,12 +60,14 @@ const Home = () => {
                 const { list } = value.fetched;
                 return (
                   <Link
+                    key={id}
                     to={`details/${id}`}
                     className={`${
                       sequencyForAddingColors.includes(index + 1)
                         ? 'bg-slate-300'
                         : 'bg-slate-200 md:bg-slate-300'
-                    } shadow-lg rounded p-2 sm:hover:scale-[1.03]`}>
+                    } shadow-lg rounded p-2 sm:hover:scale-[1.03]`}
+                  >
                     <HomeCard
                       imageUrl={imgUrl}
                       country={country}
@@ -75,18 +77,20 @@ const Home = () => {
                   </Link>
                 );
               })
-          : status === 'succeeded' &&
-            data.map((value, index) => {
+          : status === 'succeeded'
+            && data.map((value, index) => {
               const { country, imgUrl, id } = value;
               const { list } = value.fetched;
               return (
                 <Link
+                  key={id}
                   to={`details/${id}`}
                   className={`${
                     sequencyForAddingColors.includes(index + 1)
                       ? 'bg-slate-300'
                       : 'bg-slate-200 md:bg-slate-300'
-                  } shadow-lg rounded p-2 hover:scale-[1.02] sm:hover:scale-[1.03] transition-all`}>
+                  } shadow-lg rounded p-2 hover:scale-[1.02] sm:hover:scale-[1.03] transition-all`}
+                >
                   <HomeCard
                     imageUrl={imgUrl}
                     country={country}
