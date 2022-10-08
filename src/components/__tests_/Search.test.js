@@ -1,4 +1,8 @@
-// import { render, screen } from '@testing-library/react';
-// import Search from '../Africa';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import Search from '../Search';
 
-// it('Check if the search bar is loaded well ', () => {});
+if('Renders when there are no props passed to it', () => {
+    const tree = renderer.create(<Search />).toJSON();
+    expect(tree).toMatchSnapshot();
+})
