@@ -29,7 +29,7 @@ Array [
     />
   </div>,
   <div
-    className="hidden md:block text-3xl mx-7 text-pink-700"
+    className="hidden md:block text-2xl lg:text-3xl mx-7 text-pink-700 my-4 text-center "
   >
     Current Air Quality Index in all African countries
   </div>,

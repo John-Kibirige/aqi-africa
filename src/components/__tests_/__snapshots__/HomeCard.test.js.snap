@@ -30,6 +30,7 @@ exports[`Create sapshot for home card component  1`] = `
         className="bg-pink-500 inline-block text-white p-1 px-3 m-1 font-bold  rounded-3xl"
       >
          
+        3
       </span>
     </p>
   </div>
