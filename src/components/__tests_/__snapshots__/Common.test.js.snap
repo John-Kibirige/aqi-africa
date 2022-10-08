@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test for Common component 1`] = `
+<header
+  className="header bg-pink-600"
+>
+  <nav
+    className="nav flex justify-center relative items-center"
+  >
+    <h2
+      className="py-5 text-white font-bold text-2xl w-10/12 text-center"
+    >
+      Home
+    </h2>
+  </nav>
+</header>
+`;
