@@ -20,7 +20,7 @@ const Search = ({ nameState, handleOnChange }) => {
       />
       <button
         type="button"
-        className="submit flex bg-pink-600 pl-1 align-middle w-2/12 justify-center"
+        className="submit flex bg-pink-600 pl-1 items-center w-2/12 justify-center"
       >
         <img src={searchIcon} alt="search" className="w-5 block md:w-6" />
       </button>
