@@ -1,14 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders when there are no props passed to it 1`] = `
+exports[`Renders when there are props passed to it 1`] = `
 <form
   className="search-form flex sm:mt-7 sm:mb-4 md:w-8/12 md:mx-auto mx-4"
   onSubmit={[Function]}
 >
   <input
     className="bg-gray-100 appearance-none border-2 border-pink-400 w-10/12 py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-500 sm:p-2 md:p-3 text-xl"
+    name="name state"
+    onChange={[Function]}
     placeholder="Search by country"
     type="text"
+    value="name state"
   />
   <button
     className="submit flex bg-pink-600 pl-1 align-middle w-2/12 justify-center"

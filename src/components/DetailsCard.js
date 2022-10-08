@@ -34,14 +34,10 @@ const DetailsCard = (props) => {
             {capital}
           </h3>
           <p className="lon-lat sm:text-xl sm:text-center sm:mb-2">
-            Longitude:
-            {' '}
-            {longitude}
+            Longitude: {longitude}
           </p>
           <p className="lon-lat sm:text-xl sm:text-center sm:mb-2">
-            Latitude:
-            {' '}
-            {latitude}
+            Latitude: {latitude}
           </p>
         </div>
 
@@ -53,7 +49,6 @@ const DetailsCard = (props) => {
                 <th className="p-1">Index</th>
               </tr>
             </thead>
-            {' '}
             <tbody>
               <tr>
                 <th className="p-1 font-normal border-b border-pink-400 border-r">
@@ -92,12 +87,8 @@ const DetailsCard = (props) => {
 
       <button
         type="button"
-        className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-[18px] mr-3 sm:mt-7 sm:mr-7"
-      >
-        {' '}
-        index =
-        {' '}
-        {aqIndex}
+        className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-[18px] mr-3 sm:mt-7 sm:mr-7">
+        index = {aqIndex}
       </button>
 
       <h2 className="break-down font-bold text-2xl uppercase text-center my-4 sm:text-3xl">
@@ -111,8 +102,7 @@ const DetailsCard = (props) => {
             <th className="header w-1/3 sm:p-3 sm:text-lg">Component name</th>
             <th className="header w-1/3 sm:p-3 sm:text-lg">
               Concentration (μg/m
-              <sup>3</sup>
-              )
+              <sup>3</sup>)
             </th>
           </tr>
         </thead>
@@ -151,8 +141,7 @@ const DetailsCard = (props) => {
           </tr>
           <tr>
             <td className="border border-solid border-l border-pink-400 hover:bg-pink-200 transition-all sm:p-2">
-              O
-              <sub>3</sub>
+              O<sub>3</sub>
             </td>
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               Ozone
@@ -195,7 +184,6 @@ const DetailsCard = (props) => {
             <td className="border border-solid border-pink-400 hover:bg-pink-200 transition-all">
               {' '}
               Bigger size Particulates
-              {' '}
             </td>
             <td className="border border-solid border-r border-pink-400 hover:bg-pink-200 transition-all">
               {pm10}
