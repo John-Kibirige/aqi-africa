@@ -1,16 +1,33 @@
 # AQI Africa
+
 This is a simple web application that consumes the open weather api targeting specifically the air pollution data. This is live data from all major cities in all african countries.
 
 ## Built With
 
 - Major languages: React, Javascript and tailwindCSS
-- Technologies used: Linters, Create react app, Git, Github and Gitflow,
+- Technologies used: Redux, Linters, Create react app, Git, Github and Gitflow,
 
-## video description 
+## App outlook
+
+**Desktop version**
+_Home page_
+![](public/aqi-africa-desktop.png)
+_Details page_
+![](public/aqi-africa-desktop-details.png)
+
+**Mobile**
+
+![](public/aqi-africa-mobile.png)
+
+![](public/aqi-africa-mobile-details.png)
+
+## video description
+
+[https://www.loom.com/share/cce6c0315bac477888be7f3e2febf955](https://www.loom.com/share/cce6c0315bac477888be7f3e2febf955)
 
 ## Live Demo (if available)
 
-N/A
+h[ttps://luxury-begonia-7d2330.netlify.app/](https://luxury-begonia-7d2330.netlify.app/)
 
 ## Getting Started
 
@@ -27,12 +44,12 @@ To get a local copy up and running follow these simple example steps.
 2. Clone this repo in your terminal or git bash using the command
 
    ```
-   git@github.com:John-Kibirige/bookstore-react.git
+   git@github.com:John-Kibirige/aqi-africa.git
    ```
 
 3. run `npm install ` to install all the necessary dependencies including the linters
 
-4. Navigate to the folder called bookstore-react.git and open this project using your editor
+4. Navigate to the folder called aqi-africa and open this project in your editor
 
 ### Setting up the server up and running
 
@@ -46,6 +63,7 @@ These were linter tests mainly
 - Javascript and jsx `npx eslint .`
 
 ### Deployment
+Deployed at netlify 
 
 ## Author
 
@@ -59,7 +77,7 @@ These were linter tests mainly
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/John-Kibirige/bookstore-react/issues).
+Feel free to check the [issues page](https://github.com/John-Kibirige/aqi-africa/issues).
 
 ## Show your support
 
@@ -67,10 +85,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+ - [Original design idea by Nelson Sakwa on Behance](https://www.behance.net/gallery/31579789/Ballhead-App-%28Free-PSDs%29)
 
 ## 📝 License
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](LICENSE) licensed.
