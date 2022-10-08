@@ -11,4 +11,4 @@ it('Renders air quality index header', () => {
 it('Snapshot test for africa component passes  ', () => {
   const tree = renderer.create(<Africa />).toJSON();
   expect(tree).toMatchSnapshot();
-})
+});
