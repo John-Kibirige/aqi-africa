@@ -13,7 +13,7 @@ export const fetchData = createAsyncThunk(
   async () => {
     const endpoints = initialState.data.map((obj) => {
       const { latitude, longitude } = obj;
-      return `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=e4277ee92aa2cfce970abfb055b3dde7`;
+      return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=e4277ee92aa2cfce970abfb055b3dde7`;
     });
 
     const promises = endpoints.map((point) => axios.get(point));
