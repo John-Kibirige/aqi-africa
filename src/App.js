@@ -4,7 +4,7 @@ import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App transition-all">
+    <div className="App transition-all font-lato">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
