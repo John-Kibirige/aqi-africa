@@ -25,7 +25,7 @@ const Africa = () => (
       <div className="overlay absolute w-full h-full bg-pink-500 top-0 left-0 right-0 bottom-0 opacity-80 -z-10" />
     </div>
 
-    <div className="hidden md:block text-3xl mx-7 text-pink-700">
+    <div className="hidden md:block text-2xl lg:text-3xl mx-7 text-pink-700 my-4 text-center ">
       Current Air Quality Index in all African countries
     </div>
   </>
