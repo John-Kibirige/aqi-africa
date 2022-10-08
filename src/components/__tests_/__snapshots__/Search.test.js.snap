@@ -6,7 +6,7 @@ exports[`Renders when there are props passed to it 1`] = `
   onSubmit={[Function]}
 >
   <input
-    className="bg-gray-100 appearance-none border-2 border-pink-400 w-10/12 py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-500 sm:p-2 md:p-3 text-xl"
+    className="bg-gray-100 appearance-none border-2 border-pink-400 w-10/12 py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-500 sm:p-2 lg:p-3 text-xl"
     name="name state"
     onChange={[Function]}
     placeholder="Search by country"

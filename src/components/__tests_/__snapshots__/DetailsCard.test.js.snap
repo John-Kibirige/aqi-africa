@@ -28,13 +28,15 @@ exports[`Create snapshot test for the Details Card component  1`] = `
       <p
         className="lon-lat sm:text-xl sm:text-center sm:mb-2"
       >
-        Longitude: 
+        Longitude:
+         
         43
       </p>
       <p
         className="lon-lat sm:text-xl sm:text-center sm:mb-2"
       >
-        Latitude: 
+        Latitude:
+         
         43
       </p>
     </div>
@@ -127,7 +129,8 @@ exports[`Create snapshot test for the Details Card component  1`] = `
     className="index bg-pink-500 text-gray-100 uppercase px-3 sm:px-5 py-1 sm:py-2 sm:text-white sm:font-bold sm:text-lg rounded ml-auto hover:bg-pink-400 block mt-[18px] mr-3 sm:mt-7 sm:mr-7"
     type="button"
   >
-    index = 
+    index =
+     
     43
   </button>
   <h2
